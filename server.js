@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
@@ -20,9 +21,30 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME
 });
 
+// Connect to the MySQL database and log success or throw an error if connection fails
 db.connect(err => {
     if (err) throw err;
     console.log('Connected to MySQL Database!');
+});
+
+// Redirect from '/' to '/home'
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
+// 'http://localhost:3000/home' = /home.html
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'home.html'));
+});
+
+// 'http://localhost:3000/login' = /login.html
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'login.html'));
+});
+
+// 'http://localhost:3000/signup' = /signup.html
+app.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'signup.html'));
 });
 
 // Sign Up Endpoint
