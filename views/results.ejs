@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Personality Test Results</title>
+</head>
+<body>
+    <h1>Your MBTI Type: <span id="mbti-type"><%= mbti %></span></h1>
+    <p id="mbti-description"><%= description %></p>
+    <% if (userId) { %>
+    <a href="/take-test-again"><button type="button" class="retakebtn">Retake Test</button></a>
+    <button id="share-btn">Share Results</button><br><br>
+    <a href="/logout"><button type="button" class="logoutbtn">Log Out</button></a>
+
+    <script>
+        document.getElementById('share-btn').addEventListener('click', () => {
+            const type = document.getElementById('mbti-type').innerText;
+            const desc = document.getElementById('mbti-description').innerText;
+            const textToCopy = `My MBTI type is ${type}. ${desc}`;
+
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    console.log('Copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Failed to copy:', err);
+                });
+        });
+    </script>
+    <% } else { %>
+        <a href="/"><button type="button" class="homebtn">Go Back</button></a>
+    <% } %>
+</body>
+</html>
