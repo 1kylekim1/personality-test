@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Personality Test</title>
+    <style>
+        .question {
+            display: none;
+        }
+    </style>
+    <script src="/js/test.js"></script>
+</head>
+<body>
+    <form id="mbti-test">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. At parties, you tend to interact with many different people, including strangers.</p>
+            <input type="radio" id="q1-agree" name="q1" value="E">
+            <label for="q1-agree">Agree</label><br>
+            <input type="radio" id="q1-disagree" name="q1" value="I">
+            <label for="q1-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. You reply to your emails as fast as possible and cannot stand a messy inbox.</p>
+            <input type="radio" id="q2-agree" name="q2" value="J">
+            <label for="q2-agree">Agree</label><br>
+            <input type="radio" id="q2-disagree" name="q2" value="P">
+            <label for="q2-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. You often get so lost in thought you ignore or forget your surroundings.</p>
+            <input type="radio" id="q3-agree" name="q3" value="N">
+            <label for="q3-agree">Agree</label><br>
+            <input type="radio" id="q3-disagree" name="q3" value="S">
+            <label for="q3-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. You value logic and fairness over how people feel when making decisions.</p>
+            <input type="radio" id="q4-agree" name="q4" value="T">
+            <label for="q4-agree">Agree</label><br>
+            <input type="radio" id="q4-disagree" name="q4" value="F">
+            <label for="q4-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. You find yourself daydreaming about "what if" scenarios often.</p>
+            <input type="radio" id="q5-agree" name="q5" value="N">
+            <label for="q5-agree">Agree</label><br>
+            <input type="radio" id="q5-disagree" name="q5" value="S">
+            <label for="q5-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. You feel emotionally impacted by sad news, even if it doesn't affect you personally.</p>
+            <input type="radio" id="q6-agree" name="q6" value="F">
+            <label for="q6-agree">Agree</label><br>
+            <input type="radio" id="q6-disagree" name="q6" value="T">
+            <label for="q6-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. You prefer to have a plan in place before starting a task or project.</p>
+            <input type="radio" id="q7-agree" name="q7" value="J">
+            <label for="q7-agree">Agree</label><br>
+            <input type="radio" id="q7-disagree" name="q7" value="P">
+            <label for="q7-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. You prefer spending time in large social gatherings rather than one-on-one conversations.</p>
+            <input type="radio" id="q8-agree" name="q8" value="E">
+            <label for="q8-agree">Agree</label><br>
+            <input type="radio" id="q8-disagree" name="q8" value="I">
+            <label for="q8-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. You find satisfaction in finishing tasks before deadlines.</p>
+            <input type="radio" id="q9-agree" name="q9" value="J">
+            <label for="q9-agree">Agree</label><br>
+            <input type="radio" id="q9-disagree" name="q9" value="P">
+            <label for="q9-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. Solitude is more energizing to you than spending time with others.</p>
+            <input type="radio" id="q10-agree" name="q10" value="I">
+            <label for="q10-agree">Agree</label><br>
+            <input type="radio" id="q10-disagree" name="q10" value="E">
+            <label for="q10-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <p>11. You prefer instructions to be detailed and step-by-step.</p>
+            <input type="radio" id="q11-agree" name="q11" value="S">
+            <label for="q11-agree">Agree</label><br>
+            <input type="radio" id="q11-disagree" name="q11" value="N">
+            <label for="q11-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <p>12. You enjoy being in busy environments more than quiet ones.</p>
+            <input type="radio" id="q12-agree" name="q12" value="E">
+            <label for="q12-agree">Agree</label><br>
+            <input type="radio" id="q12-disagree" name="q12" value="I">
+            <label for="q12-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <p>13. Efficiency and outcomes matter more to you than emotional nuance in tough situations.</p>
+            <input type="radio" id="q13-agree" name="q13" value="T">
+            <label for="q13-agree">Agree</label><br>
+            <input type="radio" id="q13-disagree" name="q13" value="F">
+            <label for="q13-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <p>14. You typically speak before thinking through everything you want to say.</p>
+            <input type="radio" id="q14-agree" name="q14" value="E">
+            <label for="q14-agree">Agree</label><br>
+            <input type="radio" id="q14-disagree" name="q14" value="I">
+            <label for="q14-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <p>15. You often focus on future possibilities rather than current realities.</p>
+            <input type="radio" id="q15-agree" name="q15" value="N">
+            <label for="q15-agree">Agree</label><br>
+            <input type="radio" id="q15-disagree" name="q15" value="S">
+            <label for="q15-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <p>16. You are more spontaneous than methodical in your personal and work life.</p>
+            <input type="radio" id="q16-agree" name="q16" value="P">
+            <label for="q16-agree">Agree</label><br>
+            <input type="radio" id="q16-disagree" name="q16" value="J">
+            <label for="q16-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <p>17. In your free time, you gravitate towards hands-on, practical activities.</p>
+            <input type="radio" id="q17-agree" name="q17" value="S">
+            <label for="q17-agree">Agree</label><br>
+            <input type="radio" id="q17-disagree" name="q17" value="N">
+            <label for="q17-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <p>18. Emotional harmony is more important than being right in a disagreement.</p>
+            <input type="radio" id="q18-agree" name="q18" value="F">
+            <label for="q18-agree">Agree</label><br>
+            <input type="radio" id="q18-disagree" name="q18" value="T">
+            <label for="q18-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <p>19. You often empathize with people even when you don't agree with them logically.</p>
+            <input type="radio" id="q19-agree" name="q19" value="F">
+            <label for="q19-agree">Agree</label><br>
+            <input type="radio" id="q19-disagree" name="q19" value="T">
+            <label for="q19-disagree">Disagree</label><br>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <p>20. You prefer to make flexible plans rather than locking things in early.</p>
+            <input type="radio" id="q20-agree" name="q20" value="P">
+            <label for="q20-agree">Agree</label><br>
+            <input type="radio" id="q20-disagree" name="q20" value="J">
+            <label for="q20-disagree">Disagree</label><br>
+        </div>
+
+        <div>
+            <br>
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+    </form>
+</body>
+</html>

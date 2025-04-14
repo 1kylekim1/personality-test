@@ -10,6 +10,7 @@ const app = express();
 const port = 3000;
 
 // Middleware
+app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -47,6 +48,11 @@ app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'signup.html'));
 });
 
+// 'http://localhost:3000/test' = /test.html
+app.get('/test', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'test.html'));
+});
+
 // Sign Up Endpoint
 app.post('/signup', async (req, res) => {
     const { username, pwd } = req.body;
@@ -63,7 +69,8 @@ app.post('/signup', async (req, res) => {
                 console.error(err);
                 return res.status(500).send('Error creating account');
             }
-            res.status(201).send('Account created successfully!');
+            // After successful signup
+            res.redirect('/test')
         });
     } catch (error) {
         res.status(500).send('Server error');
@@ -95,7 +102,8 @@ app.post('/login', (req, res) => {
             return res.status(401).send('Invalid credentials');
         }
 
-        res.status(200).send('Login successful');
+        // After successful login
+        res.redirect('/test')
     });
 });
 
