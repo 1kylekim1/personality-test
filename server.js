@@ -96,6 +96,11 @@ app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'home.html'));
 });
 
+// 'http://localhost:3000/intro' = /intro.html
+app.get('/intro', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'intro.html'));
+});
+
 // 'http://localhost:3000/login' = /login.html
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'login.html'));
@@ -162,8 +167,8 @@ app.get('/take-test-again', (req, res) => {
             
             req.session.mbti = null;
 
-            // Redirect the user to the test page to retake the test
-            res.redirect('/test');
+            // Redirect the user to the intro page to retake the test
+            res.redirect('/intro');
         });
     } else {
         // If the user is not logged in, redirect to login page
@@ -231,7 +236,7 @@ app.post('/login', (req, res) => {
             return res.redirect(`/results?mbti=${user.mbti_result}`);
         } else {
             console.log('Login completed successfully.');
-            return res.redirect('/test');
+            return res.redirect('/intro');
         }
     });
 });
