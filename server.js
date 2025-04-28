@@ -188,7 +188,7 @@ app.post('/signup', async (req, res) => {
                 return res.status(500).send('Error creating account');
             }
             // After successful signup
-            res.redirect('/test')
+            res.redirect('/login')
             console.log('Signup completed successfully.');
         });
     } catch (error) {
