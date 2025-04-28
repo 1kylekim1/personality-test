@@ -42,10 +42,7 @@ db.connect(err => {
 app.post('/submit-mbti', (req, res) => {
     const { mbti } = req.body;
 
-    const descriptions = {
-        'ENFP': 'ENFPs are enthusiastic, creative, and sociable...',
-        'INTJ': 'INTJs are strategic, logical, and determined...',
-    };
+    const descriptions = { };
 
     const description = descriptions[mbti] || 'Description not available';
 
