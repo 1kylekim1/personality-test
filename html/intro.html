@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome! Let's Get Started!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
-<body>
-    <h1>Welcome to the MBTI Personality Test!</h1>
-    <p>Thank you for choosing to take our personality test. Before you begin, please take a moment to read the instructions.</p>
-    <ol>
-        <li><b>Time limit:</b> There is no time limit for this test, so take your time to answer each question honestly.</li>
-        <li><b>Answer Honestly:</b> The test is designed to evaluate your personality traits. Choose the option that best reflects how you feel, not what you think others might expect you to choose.</li>
-        <li><b>No Right or Wrong Answers:</b> There are no right or wrong answers. This test is purely for self-reflection and understanding your personality traits.</li>
-        <li><b>Results:</b> Once you finish the test, your results will be displayed, revealing the personality traits that most define your behavior.</li>
-        <li><b>Share Your Results:</b> Feel free to share your personality test results with your friends and family afterwards! Just click the "share" button once you're done and the results will be copied to your clipboard.</li>
-    </ol>
-    <a href="/test"><button type="button">Start</button></a>
-    <a href="/logout"><button type="button">Log Out</button></a>
+<body class="bg-light d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="container text-center p-5 bg-white rounded shadow" style="max-width: 800px;">
+        <h1 class="mb-4">Welcome to the MBTI Personality Test!</h1>
+        <p class="lead">Thank you for choosing to take our personality test. Before you begin, please take a moment to read the instructions.</p>
+        <ol class="text-start my-4">
+            <li><b>Time limit:</b> There is no time limit for this test, so take your time to answer each question honestly.</li><br>
+            <li><b>Answer Honestly:</b> The test is designed to evaluate your personality traits. Choose the option that best reflects how you feel, not what you think others might expect you to choose.</li><br>
+            <li><b>No Right or Wrong Answers:</b> There are no right or wrong answers. This test is purely for self-reflection and understanding your personality traits.</li><br>
+            <li><b>Results:</b> Once you finish the test, your results will be displayed, revealing the personality traits that most define your behavior.</li><br>
+            <li><b>Share Your Results:</b> Feel free to share your personality test results with your friends and family afterwards! Just click the "share" button once you're done and the results will be copied to your clipboard.</li><br>
+        </ol>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="/test"><button type="button" class="btn btn-primary px-4">Start</button></a>
+            <a href="/logout"><button type="button" class="btn btn-secondary px-4">Log Out</button></a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
