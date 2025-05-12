@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Log In</h1>
-    <form action="http://localhost:3000/login" method="POST">
+    <form id="loginForm" action="http://localhost:3000/login" method="POST">
         <label for="username">Username: </label><br>
         <input type="text" id="username" name="username" required><br><br>
         <label for="pwd">Password: </label><br>
@@ -15,5 +15,15 @@
         <button type="submit" class="loginbtn">Log In</button>
         <a href="/home"><button type="button">Cancel</button></a>
     </form>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+    
+        if (error === 'notfound') {
+            alert('User not found. Please check your username.');
+        } else if (error === 'invalid') {
+            alert('Invalid password. Please try again.');
+        }
+    </script>    
 </body>
 </html>

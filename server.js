@@ -187,14 +187,14 @@ app.post('/signup', async (req, res) => {
         db.query(sql, [username, hashedPassword], (err, result) => {
             if (err) {
                 console.error(err);
-                return res.status(500).send('Error creating account');
+                return res.redirect('/signup?error=invalid');
             }
             // After successful signup
             res.redirect('/login')
             console.log('Signup completed successfully.');
         });
     } catch (error) {
-        res.status(500).send('Server error');
+        return res.redirect('/signup?error=invalid');
     }
 });
 
@@ -214,13 +214,13 @@ app.post('/login', (req, res) => {
         }
 
         if (results.length === 0) {
-            return res.status(404).send('User not found');
+            return res.redirect('/login?error=notfound');
         }
 
         const user = results[0];
         const isMatch = await bcrypt.compare(pwd, user.password);
         if (!isMatch) {
-            return res.status(401).send('Invalid credentials');
+            return res.redirect('/login?error=invalid');
         }
 
         // After successful login

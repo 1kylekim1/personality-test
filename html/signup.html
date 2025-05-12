@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Sign Up</h1>
-    <form action="http://localhost:3000/signup" method="POST">
+    <form id="signupForm" action="http://localhost:3000/signup" method="POST">
         <label for="username">Username: </label><br>
         <input type="text" id="username" name="username" required><br><br>
         <label for="pwd">Password: </label><br>
@@ -15,5 +15,12 @@
         <button type="submit" class="signupbtn">Create Account</button>
         <a href="/home"><button type="button">Cancel</button></a>
     </form>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+        if (error === 'invalid') {
+            alert('Error creating account. Try a different username and password.');
+        }
+    </script>  
 </body>
 </html>
